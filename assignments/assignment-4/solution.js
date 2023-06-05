@@ -57,3 +57,14 @@ var result =
     author;
 
 console.log(result);
+
+// Assignment Operators //
+
+var resultOperator = part1;
+resultOperator += " " + part2;
+resultOperator += " " + part3;
+resultOperator += " " + part4;
+resultOperator += " " + part5;
+resultOperator += " " + author;
+
+console.log(resultOperator);
