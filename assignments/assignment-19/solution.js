@@ -51,11 +51,19 @@ console.log(splitSentenceIntoWords("Hello World from JavaScript"));
 // Example Input: "first name"
 // Example Output: "firstName"
 
-// function createCamelCase(str) {
-//     let result str.join("");
-// }
+function createCamelCase(str) {
+    let strParts = str.split(" ");
+    let part1 = strParts[0];
+    let part2 = strParts[1];
 
-// console.log(createCamelCase("Hello world"));
+    return (
+        part1.toLowerCase() +
+        part2[0].toUpperCase() +
+        part2.slice(1).toLowerCase()
+    );
+}
+
+console.log(createCamelCase("Hello world"));
 
 // 5 //
 
@@ -83,10 +91,11 @@ console.log(splitAndReverse("one-two-three", "-"));
 // Example Output: "OpenAI_GPT-4_rocks"
 
 function replaceSpacesWithUnderscore(str) {
-    return str.replace(" ", "_");
+    var parts = str.split(" ");
+    return parts.join("_");
 }
 
-console.log(replaceSpacesWithUnderscore("Hello world"));
+console.log(replaceSpacesWithUnderscore("Hello world again"));
 
 // 7 //
 
@@ -96,9 +105,15 @@ console.log(replaceSpacesWithUnderscore("Hello world"));
 // Example Input: ("red,green,blue", [",", "e"])
 // Example Output: ["r", "d", "gr", "", "n", "blu", ""]
 
-function splitByMultipleCharacters(str, characters) {
-    return str.split;
+function splitByMultipleCharacters(str, chars) {
+    for (let i = 0; i < chars.length; i++) {
+        var char = chars[i];
+        str = str.split(char).join("%");
+    }
+    return str.split("%");
 }
+
+console.log(splitByMultipleCharacters("apple-orange-banana", ["-", "a"]));
 
 // 8 //
 
